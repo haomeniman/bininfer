@@ -85,6 +85,10 @@ record count and entries live:
 Profiles are plain JSON; adding support for a new format is usually a matter of
 describing its header and entry layout, not writing code.
 
+Full profile reference, the byte-level container spec of the demo format, the
+observed tag table, and the inference rules are documented in
+[docs/FORMAT.md](docs/FORMAT.md).
+
 ## Validation on a real corpus
 
 The engine was validated on **19,819 real files** produced by one proprietary
