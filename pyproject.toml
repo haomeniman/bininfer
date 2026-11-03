@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bininfer"
+version = "0.1.0"
+description = "Infer field sizes for tagged binary records from a corpus, then parse them."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "bininfer contributors" }]
+keywords = ["reverse-engineering", "binary-format", "schema-inference", "forensics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Security",
+    "Topic :: Software Development :: Disassemblers",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+bininfer = "bininfer.cli:main"
+
+[tool.setuptools]
+packages = ["bininfer"]

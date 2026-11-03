@@ -1,0 +1,20 @@
+{
+  "name": "e903-demo",
+  "description": "Records of length-prefixed identifier names and u32 type tags, where the value size is implied by the tag but not documented.",
+  "magic": { "offset": 0, "hex": "e9030000" },
+  "header": {
+    "string_count": { "offset": 16, "type": "u32le" }
+  },
+  "string_pool": {
+    "start": 20,
+    "entry": { "length": "u32le", "encoding": "utf-8", "trailer_index": "u32le" }
+  },
+  "record": {
+    "count": { "after": "string_pool", "type": "u32le" },
+    "entry": { "name_length": "u32le", "name": "identifier", "tag": "u32le" },
+    "size_candidates": [0, 1, 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64, 96, 128],
+    "seed_sizes": { "0x72f31961": 12 },
+    "max_entries": 512,
+    "min_votes": 2
+  }
+}
